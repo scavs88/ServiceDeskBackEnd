@@ -38,22 +38,26 @@ namespace ServiceDesk
             {
                 entity.ToTable("BookMarked");
 
-                entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("ID");
 
                 entity.Property(e => e.BookMarkedBy).HasMaxLength(50);
 
-                entity.Property(e => e.Issue).HasColumnType("text");
-
-                entity.Property(e => e.OpenedBy).HasMaxLength(50);
-
-                entity.Property(e => e.TicketName).HasMaxLength(50);
+                entity.HasOne(d => d.IdNavigation)
+                    .WithOne(p => p.BookMarked)
+                    .HasForeignKey<BookMarked>(d => d.Id)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__BookMarked__ID__36B12243");
             });
 
             modelBuilder.Entity<Resolution>(entity =>
             {
                 entity.ToTable("Resolution");
 
-                entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("ID");
 
                 entity.Property(e => e.ClosedBy).HasMaxLength(50);
 
@@ -63,26 +67,22 @@ namespace ServiceDesk
 
                 entity.Property(e => e.TicketName).HasMaxLength(50);
 
-                entity.HasOne(d => d.TicketNameNavigation)
-                    .WithMany(p => p.Resolutions)
-                    .HasForeignKey(d => d.TicketName)
-                    .HasConstraintName("FK__Resolutio__Ticke__31EC6D26");
+                entity.HasOne(d => d.IdNavigation)
+                    .WithOne(p => p.Resolution)
+                    .HasForeignKey<Resolution>(d => d.Id)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__Resolution__ID__3C69FB99");
             });
 
             modelBuilder.Entity<Ticket>(entity =>
             {
-                entity.HasKey(e => e.TicketName)
-                    .HasName("PK__Tickets__D1E4EDB05F1DC931");
-
-                entity.Property(e => e.TicketName).HasMaxLength(50);
-
-                entity.Property(e => e.Id)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("ID");
+                entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.Issue).HasColumnType("text");
 
                 entity.Property(e => e.OpenedBy).HasMaxLength(50);
+
+                entity.Property(e => e.TicketName).HasMaxLength(50);
             });
 
             OnModelCreatingPartial(modelBuilder);

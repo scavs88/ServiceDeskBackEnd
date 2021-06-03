@@ -12,6 +12,6 @@ namespace ServiceDesk
         public string Resolution1 { get; set; }
         public string ClosedBy { get; set; }
 
-        public virtual Ticket TicketNameNavigation { get; set; }
+        public virtual Ticket IdNavigation { get; set; }
     }
 }

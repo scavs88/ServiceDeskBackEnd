@@ -21,12 +21,13 @@ namespace ServiceDesk.Controllers
         }
 
         [HttpPost]
-        public Resolution AddResultion(string ticketname, string resolution, string closedby)
+        public Resolution AddResultion(int id, string ticketname, string resolution, string closedby)
         {
             using (ServiceDeskDBContext context = new ServiceDeskDBContext())
             {
                 Resolution r = new Resolution()
                 {
+                    Id = id,
                     TicketName = ticketname,
                     Resolution1 = resolution,
                     ClosedBy = closedby

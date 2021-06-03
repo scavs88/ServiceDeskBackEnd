@@ -9,9 +9,7 @@ namespace ServiceDesk
     {
         public string BookMarkedBy { get; set; }
         public int Id { get; set; }
-        public bool? Status { get; set; }
-        public string TicketName { get; set; }
-        public string Issue { get; set; }
-        public string OpenedBy { get; set; }
+
+        public virtual Ticket IdNavigation { get; set; }
     }
 }

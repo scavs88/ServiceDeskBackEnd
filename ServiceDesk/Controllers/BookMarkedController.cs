@@ -22,17 +22,14 @@ namespace ServiceDesk.Controllers
         }
 
         [HttpPost]
-        public BookMarked AddBookMarked(string bookmarkedby, bool status, string ticketname, string issue, string openedby)
+        public BookMarked AddBookMarked(string bookmarkedby, int id)
         {
             using (ServiceDeskDBContext context = new ServiceDeskDBContext())
             {
                 BookMarked b = new BookMarked()
                 {
                     BookMarkedBy = bookmarkedby,
-                    Status = status,
-                    TicketName = ticketname,
-                    Issue = issue,
-                    OpenedBy = openedby
+                    Id = id
                 };
                 context.BookMarkeds.Add(b);
                 context.SaveChanges();
