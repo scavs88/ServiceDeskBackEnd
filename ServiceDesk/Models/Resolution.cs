@@ -7,6 +7,7 @@ namespace ServiceDesk
 {
     public partial class Resolution
     {
+        public int Id { get; set; }
         public string TicketName { get; set; }
         public string Resolution1 { get; set; }
         public string ClosedBy { get; set; }

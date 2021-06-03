@@ -51,9 +51,9 @@ namespace ServiceDesk
 
             modelBuilder.Entity<Resolution>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("Resolution");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.ClosedBy).HasMaxLength(50);
 
@@ -64,9 +64,9 @@ namespace ServiceDesk
                 entity.Property(e => e.TicketName).HasMaxLength(50);
 
                 entity.HasOne(d => d.TicketNameNavigation)
-                    .WithMany()
+                    .WithMany(p => p.Resolutions)
                     .HasForeignKey(d => d.TicketName)
-                    .HasConstraintName("FK__Resolutio__Ticke__29572725");
+                    .HasConstraintName("FK__Resolutio__Ticke__31EC6D26");
             });
 
             modelBuilder.Entity<Ticket>(entity =>
