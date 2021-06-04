@@ -39,7 +39,25 @@ namespace ServiceDesk.Controllers
             }
         }
 
+        [HttpGet()]
+        public Ticket GetTicketByID(int id)
+        {
+            using (ServiceDeskDBContext context = new ServiceDeskDBContext())
+            {
+                return context.Tickets.ToList().Find(t => t.Id == id);
+            }
 
+        }
+
+        [HttpGet()]
+        public Ticket GetTicketByTicketName(string ticketname)
+        {
+            using (ServiceDeskDBContext context = new ServiceDeskDBContext())
+            {
+                return context.Tickets.ToList().Find(t => t.TicketName == ticketname);
+            }
+
+        }
 
     }
 }
