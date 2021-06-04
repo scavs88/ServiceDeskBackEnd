@@ -39,7 +39,7 @@ namespace ServiceDesk.Controllers
             }
         }
 
-        [HttpGet()]
+        [HttpGet("{id}")]
         public Ticket GetTicketByID(int id)
         {
             using (ServiceDeskDBContext context = new ServiceDeskDBContext())
@@ -49,7 +49,7 @@ namespace ServiceDesk.Controllers
 
         }
 
-        [HttpGet()]
+        [HttpGet("name")]
         public Ticket GetTicketByTicketName(string ticketname)
         {
             using (ServiceDeskDBContext context = new ServiceDeskDBContext())
