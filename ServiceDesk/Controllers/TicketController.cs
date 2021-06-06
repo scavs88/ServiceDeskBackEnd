@@ -59,5 +59,19 @@ namespace ServiceDesk.Controllers
 
         }
 
+
+        [HttpDelete("{id}")]
+        public Ticket DeleteTicket(int id)
+        {
+            Ticket deleteTicket = new Ticket();
+            using (ServiceDeskDBContext context = new ServiceDeskDBContext())
+            {
+                deleteTicket = context.Tickets.ToList().Find(t => t.Id == id);
+                context.Tickets.Remove(deleteTicket);
+                context.SaveChanges();
+            }
+            return deleteTicket;
+        }
+
     }
 }
