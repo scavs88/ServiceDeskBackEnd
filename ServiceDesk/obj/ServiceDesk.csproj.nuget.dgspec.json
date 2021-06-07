@@ -1,21 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\spcav\\source\\repos\\ServiceDesk\\ServiceDesk\\ServiceDesk.csproj": {}
+    "C:\\Users\\Computer\\Desktop\\Project\\ServiceDeskBackEnd\\ServiceDesk\\ServiceDesk.csproj": {}
   },
   "projects": {
-    "C:\\Users\\spcav\\source\\repos\\ServiceDesk\\ServiceDesk\\ServiceDesk.csproj": {
+    "C:\\Users\\Computer\\Desktop\\Project\\ServiceDeskBackEnd\\ServiceDesk\\ServiceDesk.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\spcav\\source\\repos\\ServiceDesk\\ServiceDesk\\ServiceDesk.csproj",
+        "projectUniqueName": "C:\\Users\\Computer\\Desktop\\Project\\ServiceDeskBackEnd\\ServiceDesk\\ServiceDesk.csproj",
         "projectName": "ServiceDesk",
-        "projectPath": "C:\\Users\\spcav\\source\\repos\\ServiceDesk\\ServiceDesk\\ServiceDesk.csproj",
-        "packagesPath": "C:\\Users\\spcav\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\spcav\\source\\repos\\ServiceDesk\\ServiceDesk\\obj\\",
+        "projectPath": "C:\\Users\\Computer\\Desktop\\Project\\ServiceDeskBackEnd\\ServiceDesk\\ServiceDesk.csproj",
+        "packagesPath": "C:\\Users\\Computer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Computer\\Desktop\\Project\\ServiceDeskBackEnd\\ServiceDesk\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\spcav\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Computer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
