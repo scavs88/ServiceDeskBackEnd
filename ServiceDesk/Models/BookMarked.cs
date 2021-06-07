@@ -7,9 +7,10 @@ namespace ServiceDesk
 {
     public partial class BookMarked
     {
+        public int? TicketId { get; set; }
         public string BookMarkedBy { get; set; }
         public int Id { get; set; }
 
-        public virtual Ticket IdNavigation { get; set; }
+        public virtual Ticket Ticket { get; set; }
     }
 }

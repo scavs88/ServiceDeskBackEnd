@@ -38,17 +38,16 @@ namespace ServiceDesk
             {
                 entity.ToTable("BookMarked");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ID");
+                entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.BookMarkedBy).HasMaxLength(50);
 
-                entity.HasOne(d => d.IdNavigation)
-                    .WithOne(p => p.BookMarked)
-                    .HasForeignKey<BookMarked>(d => d.Id)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__BookMarked__ID__36B12243");
+                entity.Property(e => e.TicketId).HasColumnName("TicketID");
+
+                entity.HasOne(d => d.Ticket)
+                    .WithMany(p => p.BookMarkeds)
+                    .HasForeignKey(d => d.TicketId)
+                    .HasConstraintName("FK__BookMarke__Ticke__49C3F6B7");
             });
 
             modelBuilder.Entity<Resolution>(entity =>
